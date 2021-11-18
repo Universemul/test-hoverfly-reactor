@@ -26,10 +26,10 @@ class DemoApplicationTests {
 	@Test
 	void testHoverfly() {
 		try (HoverflyHelper ignored = HoverflyHelper.simulateOrCapture(hoverfly, "test")) {
-			OkHttpClient client = new OkHttpClient();
+			OkHttpClient client = HoverflyHelper.withHoverflyProxySelector(new OkHttpClient.Builder()).build();
 			var request = new Request.Builder().url("http://127.0.0.1:8080/helloworld").build();
 			var response = client.newCall(request).execute();
-			assertEquals("Healthy Connection", response.body().toString());
+			assertEquals("Healthy Connection", response.body().string());
 		} catch (Exception e) {
 			System.out.println("FAILURE" + e);
 		}

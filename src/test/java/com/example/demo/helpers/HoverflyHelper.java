@@ -33,7 +33,7 @@ public class HoverflyHelper implements Closeable {
         if (Files.isReadable(simulationPath)) {
             mode = HoverflyMode.SIMULATE;
         }
-
+        hoverfly.setMode(mode);
         if (mode == HoverflyMode.SIMULATE) {
             hoverfly.simulate(SimulationSource.file(simulationPath));
         }

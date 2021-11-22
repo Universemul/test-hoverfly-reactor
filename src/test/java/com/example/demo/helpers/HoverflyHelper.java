@@ -3,8 +3,6 @@ package com.example.demo.helpers;
 import io.specto.hoverfly.junit.core.Hoverfly;
 import io.specto.hoverfly.junit.core.HoverflyMode;
 import io.specto.hoverfly.junit.core.SimulationSource;
-import okhttp3.OkHttpClient;
-
 import java.io.Closeable;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -58,8 +56,4 @@ public class HoverflyHelper implements Closeable {
         this.fitToExport = false;
     }
 
-    public static OkHttpClient.Builder withHoverflyProxySelector(OkHttpClient.Builder builder) {
-        builder.proxySelector(new BypassHoverflyProxySelector());
-        return builder;
-    }
 }

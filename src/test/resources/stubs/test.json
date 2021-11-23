@@ -1,6 +1,45 @@
 {
   "data" : {
-    "pairs" : [ ],
+    "pairs" : [ {
+      "request" : {
+        "path" : [ {
+          "matcher" : "exact",
+          "value" : "/ping"
+        } ],
+        "method" : [ {
+          "matcher" : "exact",
+          "value" : "GET"
+        } ],
+        "destination" : [ {
+          "matcher" : "exact",
+          "value" : "docs.openaq.org"
+        } ],
+        "scheme" : [ {
+          "matcher" : "exact",
+          "value" : "https"
+        } ],
+        "body" : [ {
+          "matcher" : "exact",
+          "value" : ""
+        } ]
+      },
+      "response" : {
+        "status" : 200,
+        "body" : "Healthy Connection",
+        "encodedBody" : false,
+        "templated" : false,
+        "headers" : {
+          "Connection" : [ "keep-alive" ],
+          "Content-Length" : [ "18" ],
+          "Date" : [ "Mon, 22 Nov 2021 22:55:50 GMT" ],
+          "Hoverfly" : [ "Was-Here" ],
+          "Via" : [ "1.1 71ac5938fae2311667bfbb1e1df1d673.cloudfront.net (CloudFront)" ],
+          "X-Amz-Cf-Id" : [ "lavkY0oIm5mN2LbQbuW47PGFKRSqWoa4XL8oE_w1lp4t7DnIts71dQ==" ],
+          "X-Amz-Cf-Pop" : [ "LHR62-C4" ],
+          "X-Cache" : [ "Miss from cloudfront" ]
+        }
+      }
+    } ],
     "globalActions" : {
       "delays" : [ ]
     }
@@ -8,6 +47,6 @@
   "meta" : {
     "schemaVersion" : "v5.1",
     "hoverflyVersion" : "v1.3.3",
-    "timeExported" : "2021-11-18T16:11:46+01:00"
+    "timeExported" : "2021-11-22T22:55:50Z"
   }
 }
